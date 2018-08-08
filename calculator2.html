@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Calculator2</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="calculator2.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <input class="col" id="input-1" type="text" value="" placeholder="Sayı Giriniz">
+      <input class="col" id="input-2" type="text" value="" placeholder="Sayı Giriniz">
+
+      <div class="operations col-md-3 action" data-action="add">+</div>
+      <div class="operations col-md-3 action" data-action="subtract">-</div>
+      <div class="operations col-md-3 action" data-action="multiply">*</div>
+      <div class="operations col-md-3 action" data-action="divide">/</div>
+      <div class="numbers">
+        <div class="col-md-9">
+          <div class="col-md-4 number" data-number="7">7</div>
+          <div class="col-md-4 number" data-number="8">8</div>
+          <div class="col-md-4 number" data-number="9">9</div>
+          <div class="col-md-4 number" data-number="4">4</div>
+          <div class="col-md-4 number" data-number="5">5</div>
+          <div class="col-md-4 number" data-number="6">6</div>
+          <div class="col-md-4 number" data-number="1">1</div>
+          <div class="col-md-4 number" data-number="2">2</div>
+          <div class="col-md-4 number" data-number="3">3</div>
+          <div class="col-md-4 number" data-number="0">0</div>
+          <div class="col-md-4" data-action=".">.</div>
+          <div class="col-md-4" data-action="">AC</div>
+        </div>
+        <div class="col-md-3" id="result">
+          <div class="equal" data-action="=">=</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    $("document").ready(function () {
+      
+
+      function calculate(n1, operator, n2) {
+        let result = '';
+        if (operator == 'add') {
+          result = n1 + n2;
+        }
+        if (operator == 'subtract') {
+          result = n1 - n2;
+        }
+
+        if (operator == 'multiply') {
+          result = n1 * n2;
+        }
+
+        if (operator == 'divide') {
+          result = n1 / n2;
+        }
+        return result;
+      }
+
+
+      $('.number').click(function () {
+        const this_ = $(this);
+        console.log($("#input-1").val());
+        if ($("#input-1").val() == "") {
+          $("#input-1").val(this_.data('number'));
+        } else {
+          $("#input-2").val(this_.data('number'));
+        }
+      });
+
+      let type = '';
+      $('.action').click(function () {
+        type = $(this).data('action');
+        console.log('Type:' + type);
+      });
+
+
+      $('#result').click(function () {
+        const input1 = $('#input-1').val();
+        const input2 = $('#input-2').val();
+
+        console.log(type);
+
+        console.log(calculate(input1, type, input2));
+
+      });
+    });
+  </script>
+</body>
+
+</html>

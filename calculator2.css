@@ -1,0 +1,45 @@
+body {
+  color: black;
+  font-size: 16px;
+  font-weight: bold; }
+
+.container {
+  margin: 20px auto; }
+  .container input {
+    width: 100%;
+    height: 60px;
+    background-color: black;
+    font-size: 30px;
+    color: white;
+    text-align: right;
+    padding-right: 15px;
+    border: 1px solid black; }
+  .container .row .operations {
+    height: 32px;
+    background-color: white;
+    border: 1px solid gray;
+    color: #000;
+    text-align: center; }
+  .container .row .numbers {
+    width: 100%;
+    text-align: center; }
+    .container .row .numbers .col-md-9 {
+      width: 75%;
+      padding-left: 0px;
+      padding-right: 0px;
+      float: left; }
+      .container .row .numbers .col-md-9 .col-md-4 {
+        float: left;
+        border: 1px solid gray;
+        height: 32px; }
+    .container .row .numbers .col-md-3 {
+      height: 128px;
+      border: 1px solid gray;
+      width: 25%;
+      float: right;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: orangered; }
+
+/*# sourceMappingURL=calculator2.css.map */

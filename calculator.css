@@ -1,0 +1,52 @@
+body {
+  font-size: 20px;
+  background-color: white;
+  font-weight: bold;
+
+}
+
+.container {
+  margin: 20px auto;
+  text-align: center;
+}
+
+.container input {
+  width: 50%;
+  height: 100px;
+  background-color: papayawhip;
+}
+
+::placeholder {
+  color: cornflowerblue;
+  font-size: 40px;
+  text-align: right; 
+}
+
+.container .row {
+  width: 50%;
+  margin: 10px auto;
+}
+
+.container .row .col-md-8 {
+  background: thistle;
+}
+
+.container .row .col-md-8  .col-md-6{
+  float: left;
+  margin-top: 10px;
+}
+
+.container .row .col-md-8 .col-md-4 {
+  float: left;
+
+}
+
+.container .row .col-md-8 .offset-md-4 {
+  margin-top: 10px;
+  
+}
+
+.container .row .col-md-4 div {
+  margin-top: 10px;
+  background: papayawhip;
+}
